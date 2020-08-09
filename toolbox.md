@@ -85,7 +85,9 @@ ___
 
 #### create a network listening process and unlink the executable associated with it
 
-`cp /bin/nc /tmp/nc`
+`cp /bin/nc /tmp/nc` copy the binary for netcat to whatever directory you want 
+
+`unlink /tmp/nc` using the unlink command we unlink this file so it won't show up when you do the `ls -l` command
 
 #### delete a user account
 
