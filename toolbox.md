@@ -1,5 +1,12 @@
 # Toolbox
 
+
+@TODO: Add these to your toolbox!
+Add references to Hydra
+Vmsplice
+Sudo -L
+
+
 >My mission is to create a list of "goto's" for myself when I do CTF's, Incident Response, or other CyberSecurity based activities.
 
 [Ports](#ports)
@@ -9,6 +16,8 @@
 [SMB Stuff](#smb-stuff)
 
 [Linux Goodies](#linux-goodies)
+
+[Specifically Netcat](#specifically-netcat)
 
 ## Ports
 
@@ -110,3 +119,22 @@ ___
 `ps aux | grep /tmp/nc`
 
 #### lsof 
+
+
+### Specifically Netcat
+
+#### Netcat: Data Transfers
+
+##### Move file from listener back to client
+listener: `nc -l -p 7777 < file`
+
+client: `nc listenerIP 7777 > file`
+
+##### Upload file from client to listener
+listener: `nc -l -p 7777 > file`
+
+client: `nc listenerIP 7777 < file`
+
+#### Netcat: Port Scanning
+
+`nc -v -w3 -z targetIP startport-endport`
