@@ -104,3 +104,9 @@ ___
 #### Check log entries that indicates that the interface went into promiscuous mode
 
 `dmesg | grep promisc`
+
+#### search the current running processes for the netcat binary (could search any process I want netcat is a mere example)
+
+`ps aux | grep /tmp/nc`
+
+#### lsof 
