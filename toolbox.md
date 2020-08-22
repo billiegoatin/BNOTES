@@ -19,6 +19,8 @@ Sudo -L
 
 [Specifically Netcat](#specifically-netcat)
 
+[Hydra](#hydra)
+
 ## Ports
 
 ___
