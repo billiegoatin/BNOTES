@@ -138,3 +138,14 @@ client: `nc listenerIP 7777 < file`
 #### Netcat: Port Scanning
 
 `nc -v -w3 -z targetIP startport-endport`
+
+### Hydra
+
+#### Password Spraying
+`hydra -L <useraccounts.txt> -P <wordlist.txt> smb://10.10.0.1` smb service, using a word list of useraccount names (maybe you get these names from account harvesting?) and a word list of possible passwords
+
+`hydra -L <useraccounts.txt> -P <wordlist> ssh://10.10.75.1` ssh service, uwsing a word list of useraccount names, using a word list of passwords
+
+`hydra -l <username> -p <password> ssh://10.10.75.1`  one username and one password
+
+`hydra -l <username> -P <wordlist.txt> ssh://10.10.75.1` one user name and a password word list
